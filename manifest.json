@@ -1,0 +1,16 @@
+{ "manifest_version": 2,
+        "background": {
+            "scripts": ["popup.js"],
+            "persistent": true
+        },
+    
+ "name":"Malicious Url Detector",
+ "description":"Malicious Url Detector",
+ "version":"1.0.0",
+ "icons":{"128":"anti.png"},
+ "browser_action": {
+     "default_icon": "anti.png",
+     "default_popup": "popup.html"
+ },
+ "permissions":["tabs","activeTab"]
+}
