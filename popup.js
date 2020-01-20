@@ -32,7 +32,7 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
         .then(response => response.json())
         .then(data => {
         //console.log(data) 
-        alert (data.malware)// Prints result from `response.json()` in getRequest
+        alert (url+"\n\n   <<-----MALWARE STATUS----->>   "+data.malware)// Prints result from `response.json()` in getRequest
 
 
         if (data.malware==='false')
