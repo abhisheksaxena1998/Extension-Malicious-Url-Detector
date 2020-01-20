@@ -12,5 +12,5 @@
      "default_icon": "anti.png",
      "default_popup": "popup.html"
  },
- "permissions":["tabs","activeTab"]
+ "permissions":["storage","tabs","activeTab","<all_urls>"]
 }

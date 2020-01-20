@@ -6,7 +6,47 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
     //console.log(url);
     if (url!="chrome://newtab/")
     {
-        alert (theUrl);
+        //alert (theUrl);
+        /*var request = new XMLHttpRequest()
+
+        request.open('GET', theUrl, true)
+        request.onload = function() {
+        // Begin accessing JSON data here
+        var data = JSON.parse(this.response)
+
+        if (request.status >= 200 && request.status < 400) {
+            data.forEach(movie => {
+            console.log(movie.malware)
+            //alert(movie.malware)
+            })
+        } else {
+            console.log('error')
+        }
+        }
+
+        request.send()
+        alert(request.responseText.malware)*/
+
+        
+        fetch(theUrl)
+        .then(response => response.json())
+        .then(data => {
+        //console.log(data) 
+        alert (data.malware)// Prints result from `response.json()` in getRequest
+
+
+        if (data.malware==='false')
+        {
+            document.write("<h1>This site is safe</h1>");
+        }
+        else
+        {
+            document.write("Malicious Url!!")
+        }
+
+
+        })
+        .catch(error => console.error(error))
     }
     
 
