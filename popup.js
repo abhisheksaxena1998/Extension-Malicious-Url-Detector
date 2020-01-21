@@ -3,6 +3,7 @@
 chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': true}, function (tabs) {
     var url = tabs[0].url;
     theUrl="https://detecturl.herokuapp.com/api?query="+url;
+    theUrl2="https://malicious-url-detectorv5.herokuapp.com/result?url="+url;
     //console.log(url);
     if (url!="chrome://newtab/")
     {
@@ -27,16 +28,18 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
         request.send()
         alert(request.responseText.malware)*/
 
-        
+        fetch(theUrl2)
         fetch(theUrl)
         .then(response => response.json())
         .then(data => {
-        //console.log(data) 
+        //console.log(data.malware);
         alert (url+"\n\n   <<-----MALWARE STATUS----->>   "+data.malware)// Prints result from `response.json()` in getRequest
 
-
+        //console.log(type(data));
         if (data.malware==='false')
         {
+            //console.log("false")
+            alert("this site is safe")
             document.write("<h1>This site is safe</h1>");
         }
         else
@@ -46,7 +49,7 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
 
 
         })
-        .catch(error => console.error(error))
+        //.catch(error => console.error(error))
     }
     
 

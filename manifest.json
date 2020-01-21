@@ -12,5 +12,5 @@
      "default_icon": "anti.png",
      "default_popup": "popup.html"
  },
- "permissions":["storage","tabs","activeTab","<all_urls>"]
+ "permissions":["https://detecturl.herokuapp.com/","storage","tabs","activeTab","<all_urls>","webRequest","webRequestBlocking","https://*/" ]
 }
