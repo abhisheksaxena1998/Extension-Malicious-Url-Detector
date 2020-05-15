@@ -4,8 +4,8 @@
             "persistent": true
         },
     
- "name":"Malicious Url Detector",
- "description":"Malicious Url Detector",
+ "name":"Malicious URL Detector",
+ "description":"Detects whether URLs that you are browsed are safe or phishing (malicious)",
  "version":"1.0.0",
  "icons":{"128":"anti.png"},
  "browser_action": {
