@@ -10,6 +10,7 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
     if (url!="chrome://newtab/")
     {
         fetch(theUrl2)
+
         //console.log("Script Started");
         var obj;
 
@@ -22,14 +23,15 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true, 'currentWindow': t
                 //alert(obj.malware)
                 if (obj.malware == true)
                 {
-                    alert("Malicious URL Detected !!");
+                    alert("Malicious URL Detected !! \n\n"+url+"\n");
                     if (window.confirm("Do you want to leave this unsafe site? \n\nThis site is not safe!!")) { 
                         window.open("https://www.google.com/", "You have been re-directed to a safe site!!");
                       }
                 }
 
             });
-        console.log(obj);
+        //console.log(obj);
+
         
         
     }
